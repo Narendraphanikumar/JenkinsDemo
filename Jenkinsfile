@@ -14,7 +14,7 @@ pipeline {
         stage('Docker push'){
             steps{
                 script{
-                    docker.withRegistry('https://298635973747.dkr.ecr.us-east-1.amazonaws.com','ecr:us-east-1:sample-ecr') {
+                    docker.withRegistry('298635973747.dkr.ecr.us-east-1.amazonaws.com/sample-ecr') {
                         docker.image('jenkins/demo').push("$currentBuild.number")
                     }
                 }
